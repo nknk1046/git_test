@@ -78,7 +78,7 @@ def delete_todo(todo_id):
     table_service.delete_entity('tasktable2', 'tasksSeattle2', todo_id)
 
 #テスト用のサーバをlocalhost:8080で起動する
-#run(host="localhost", port=8080, debug=True, reloader=True)
+run(host="localhost", port=8080, debug=True, reloader=True)
 
 #k1webappで起動
 #run(host="k1webapp.azurewebsites.net", port=80, debug=True, reloader=True)
