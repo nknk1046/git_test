@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <title>翻訳アプリ(Python3 + Bottle)</title>
+</head>
+<body>
+  <h1>ToDoアプリ３</h1>
+  <p>これはPython3とフレームワークBottleによって作った翻訳アプリです。</p>
+
+  <h2>英訳したい日本語を入力してください</h2>
+  <form name="todo" method="POST" action="/add">
+      <input type="text" name="todo_list" placeholder="日本語を入力" required /><br/>
+      <input type="submit" value="追加" />
+  </form>
+
+  <h2>ToDo 一覧</h2>
+  <table border="2">
+  %for todo in todo_list:
+    <tr>
+      <td>{{todo["id"]}}</td>
+      <td>{{todo["todo"]}}</td>
+      <td><a href="/delete/{{todo['id']}}">削除</a></td>
+    </tr>
+  %end
+  </table>
+
+</body>
+</html>
