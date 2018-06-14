@@ -3,6 +3,7 @@ from azure.cosmosdb.table.tableservice import TableService
 from azure.cosmosdb.table.models import Entity
 from bottle import route, run, template, redirect, request
 import http.client, urllib.parse, uuid, json
+import os
 
 #translate text apiの接続情報
 TRANS_ACCESS_KEY = "b2119fbe19bc40d0973696ed7c00e730"
@@ -82,6 +83,7 @@ def delete_todo(todo_id):
 
 #k1webappで起動
 #run(host="k1webapp.azurewebsites.net", port=80, debug=True, reloader=True)
+run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
 #Webapp実行の場合
 #if __name__ == '__main__':
